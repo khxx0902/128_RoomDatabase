@@ -10,18 +10,18 @@ class OfflineRepositoriSiswa(private val siswaDao: SiswaDao):RepositoriSiswa {
     }
 
     override fun getSiswaStream(id: Int): Flow<Siswa?> {
-        TODO("Not yet implemented")
+        return siswaDao.getSiswa(id)
     }
 
     override suspend fun insertSiswa(siswa: Siswa) {
-        TODO("Not yet implemented")
+        return siswaDao.insert(siswa)
     }
 
     override suspend fun deleteSiswa(siswa: Siswa) {
-        TODO("Not yet implemented")
+        return siswaDao.delete(siswa)
     }
 
     override suspend fun updateSiswa(siswa: Siswa) {
-        TODO("Not yet implemented")
+        return siswaDao.update(siswa)
     }
 }
