@@ -27,7 +27,9 @@ import com.example.praktikum7.R
 import com.example.praktikum7.model.DetailSiswa
 import com.example.praktikum7.model.EntryViewModel
 import com.example.praktikum7.model.PenyediaViewModel
+import com.example.praktikum7.model.UIStateSiswa
 import com.example.praktikum7.navigasi.DestinasiNavigasi
+import com.example.praktikum7.navigasi.SiswaTopAppBar
 import kotlinx.coroutines.launch
 
 object DestinasiEntry : DestinasiNavigasi {
@@ -47,16 +49,16 @@ fun EntrySiswaScreen(
     Scaffold(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
-            SiswaToAppBar(
+            SiswaTopAppBar(
                 title = stringResource(DestinasiEntry.titleRes),
-                canNavigasiBack = true,
+                canNavigateBack = true,
                 scrollBehavior = scrollBehavior
             )
         }
     ) { innerPadding ->
         EntrySiswaBody(
             uiStateSiswa = viewModel.uiStateSiswa,
-            onSiswaValueChange = viewModel::updateUiState,
+            onSiswaValueChange = viewModel::updateUIState,
             onSaveClick = {
                 coroutineScope.launch {
                     viewModel.saveSiswa()

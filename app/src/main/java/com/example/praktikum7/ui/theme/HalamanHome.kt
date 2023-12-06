@@ -38,6 +38,7 @@ import com.example.praktikum7.model.HomeViewModel
 import com.example.praktikum7.navigasi.DestinasiNavigasi
 import com.example.praktikum7.R
 import com.example.praktikum7.model.PenyediaViewModel
+import com.example.praktikum7.navigasi.SiswaTopAppBar
 
 object DestinasiHome : DestinasiNavigasi {
     override val route = "home"
@@ -56,9 +57,9 @@ fun HomeScreen(
     Scaffold(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
-            SiswaToAppBar(
+            SiswaTopAppBar(
                 title = stringResource(DestinasiHome.titleRes),
-                canNavigasiBack = false,
+                canNavigateBack = false,
                 scrollBehavior = scrollBehavior
             )
         },
