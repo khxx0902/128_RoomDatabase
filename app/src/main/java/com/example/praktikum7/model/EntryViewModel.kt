@@ -2,7 +2,9 @@ package com.example.praktikum7.model
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import com.example.praktikum7.data.Siswa
 import com.example.praktikum7.repositori.RepositoriSiswa
 
 class EntryViewModel(private val repositoriSiswa: RepositoriSiswa): ViewModel() {
@@ -36,4 +38,23 @@ data class DetailSiswa(
     val nama: String = "",
     val alamat: String = "",
     val telpon: String = ""
+)
+
+fun DetailSiswa.toSiswa(): Siswa = Siswa(
+    id = id,
+    nama = nama,
+    alamat = alamat,
+    telpn = telpon
+)
+
+fun Siswa.toUiStateSiswa(isEntryValid: Boolean = false): UIStateSiswa = UIStateSiswa(
+    detailSiswa = this.toDetailSiswa(),
+    isEntryValid = isEntryValid
+)
+
+fun Siswa.toDetailSiswa(): DetailSiswa = DetailSiswa(
+    id = id,
+    nama = nama,
+    alamat = alamat,
+    telpon = telpn
 )
