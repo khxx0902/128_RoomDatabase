@@ -1,4 +1,4 @@
-package com.example.praktikum7.ui.theme
+package com.example.praktikum7.halaman
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
